@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics & Reporting</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/analytics.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <span class="logo">✈️</span>
+      <span class="brand-name">SkyConnect CRM</span>
+    </div>
+    <ul class="nav-links">
+      <li><button class="nav-btn" data-section="home">Home</button></li>
+      <li><button class="nav-btn" data-section="passengers">Passenger Management</button></li>
+      <li><button class="nav-btn" data-section="sales">Sales</button></li>
+      <li><button class="nav-btn" data-section="engagement">Customer Engagement</button></li>
+      <li><button class="nav-btn active" data-section="analytics">Analytics & Reporting</button></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <!-- Analytics -->
+  <main class="analytics-section">
+    <h2>Analytics & Reporting</h2>
+
+    <div class="subnav">
+      <button class="subnav-btn active" data-section="customers">Customer Analytics</button>
+      <button class="subnav-btn" data-section="campaigns">Campaign & Spend Analytics</button>
+      <button class="subnav-btn" data-section="revenue">Revenue & ROI Analytics</button>
+      <button class="subnav-btn" data-section="reports">Reports & Insights</button>
+    </div>
+
+    <div id="analyticsContent" class="sub-content">
+      <p>Select a section to view analytics.</p>
+    </div>
+  </main>
+
+  <script src="../javascript/dashboard.js"></script>
+  <script src="../javascript/analytics.js"></script>
+</body>
+</html>

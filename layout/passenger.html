@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Management</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/passenger.css">
+</head>
+<body>
+  <!-- NAVBAR (reused from dashboard) -->
+  <nav class="navbar">
+  <div class="brand">
+    <span class="logo">✈️</span>
+    <span class="brand-name">SkyConnect CRM</span>
+  </div>
+  <ul class="nav-links">
+    <li><button class="nav-btn" data-section="home">Home</button></li>
+    <li><button class="nav-btn" data-section="passenger">Passenger Management</button></li>
+    <li><button class="nav-btn" data-section="sales">Sales</button></li>
+    <li><button class="nav-btn" data-section="engagement">Customer Engagement</button></li>
+    <li><button class="nav-btn" data-section="analytics">Analytics & Reporting</button></li>
+    <li><button id="logoutBtn">Logout</button></li>
+  </ul>
+</nav>
+
+  <!-- Passenger Management Section -->
+  <main class="passenger-section">
+    <h2>Passenger Management</h2>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value">1,240</div>
+        <div class="stat-label">Total Passengers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">15</div>
+        <div class="stat-label">New Today</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">87%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">42</div>
+        <div class="stat-label">Pending Requests</div>
+      </div>
+    </div>
+
+    <!-- Inner Tabs -->
+    <div class="subnav">
+      <button class="subnav-btn active" data-section="profiles">All Profiles</button>
+      <button class="subnav-btn" data-section="flights">Flights</button>
+      <button class="subnav-btn" data-section="leads">Leads</button>
+      <button class="subnav-btn" data-section="bookings">Bookings</button>
+      <button class="subnav-btn" data-section="requests">Service Request</button>
+      <button class="subnav-btn" data-section="programs">Ongoing Programs</button>
+    </div>
+    <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
+
+
+    <!-- Dynamic Content Area -->
+    <div id="subContent" class="sub-content">
+      <p>Select a section to view details.</p>
+    </div>
+  </main>
+  <div class="modal-overlay" id="editFlightModal">
+    <div class="modal">
+      <h3>Edit Flight Details</h3>
+      <form id="flightForm">
+        <div class="form-group">
+          <label for="flightId">Flight ID</label>
+          <input type="text" id="flightId" readonly>
+        </div>
+        <div class="form-group">
+          <label for="flightFrom">From</label>
+          <input type="text" id="flightFrom" required>
+        </div>
+        <div class="form-group">
+          <label for="flightTo">To</label>
+          <input type="text" id="flightTo" required>
+        </div>
+        <div class="form-group">
+          <label for="flightVia">Via (optional)</label>
+          <input type="text" id="flightVia">
+        </div>
+        <div class="form-group">
+          <label for="flightDate">Date</label>
+          <input type="date" id="flightDate" required>
+        </div>
+        <div class="form-group">
+          <label for="flightTime">Time</label>
+          <input type="time" id="flightTime" required>
+        </div>
+        <div class="form-group">
+          <label for="flightDuration">Duration</label>
+          <input type="text" id="flightDuration" required>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="modal-btn cancel" id="cancelEdit">Cancel</button>
+          <button type="submit" class="modal-btn save">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-overlay" id="passengerModal">
+  <div class="modal passenger-modal">
+    <span class="close-btn" id="closePassengerModal">&times;</span>
+    <h3 id="modalPassengerName"></h3>
+    <p><strong>Email:</strong> <span id="modalPassengerEmail"></span></p>
+    <p><strong>Phone:</strong> <span id="modalPassengerPhone"></span></p>
+    <p><strong>Status:</strong> <span id="modalPassengerStatus"></span></p>
+    <p><strong>Lead:</strong> <span id="modalPassengerLead"></span></p>
+  </div>
+</div>
+
+  <script src="../javascript/dashboard.js"></script>
+  <script src="../javascript/passenger.js"></script>
+</body>
+</html>

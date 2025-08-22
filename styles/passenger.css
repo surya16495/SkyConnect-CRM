@@ -1,0 +1,381 @@
+.passenger-section {
+  padding: 20px;
+}
+
+.passenger-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+/* Subnav buttons */
+.subnav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.subnav-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #f8fafc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subnav-btn.active,
+.subnav-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* Dynamic content area */
+.sub-content {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 12px;
+  min-height: 300px;
+  color: #f1f5f9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* New styles for passenger data cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+.data-card {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.data-card h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 10px;
+}
+
+.passenger-item,
+.flight-item,
+.lead-item,
+.booking-item,
+.request-item,
+.program-item {
+  padding: 12px;
+  background: #334155;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.passenger-item:hover,
+.flight-item:hover,
+.lead-item:hover,
+.booking-item:hover,
+.request-item:hover,
+.program-item:hover {
+  background: #475569;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-active {
+  background: #10b981;
+  color: #fff;
+}
+
+
+.status-pending {
+  background: #f59e0b;
+  color: #fff;
+}
+.status-inactive { background: #ef4444; color: #fff; }
+
+.status-cancelled {
+  background: #ef4444;
+  color: #fff;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.flight-info {
+  margin-bottom: 15px;
+}
+.flight-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.flight-arrow {
+  margin: 0 10px;
+  color: #38bdf8;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.action-btn {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background: #7dd3fc;
+}
+.cancel-btn {
+  background: #ef4444;
+}
+
+.cancel-btn:hover {
+  background: #f87171;
+}
+.search-bar {
+  padding: 12px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  color: #f8fafc;
+  margin-bottom: 20px;
+}
+.search-bar::placeholder {
+  color: #94a3b8;
+}
+.stats-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Table styles for list view */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.data-table th {
+  background: #1e293b;
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.data-table tr:hover {
+  background: #334155;
+}
+
+.view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.toggle-btn.active {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+.toggle-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.toggle-btn:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal h3 {
+  color: #38bdf8;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #94a3b8;
+}
+
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: #f8fafc;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-btn.save {
+  background: #10b981;
+  color: white;
+}
+
+.modal-btn.cancel {
+  background: #94a3b8;
+  color: white;
+}
+.passenger-modal {
+  max-width: 400px;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  color: #f8fafc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.modal-overlay.active .passenger-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #f8fafc;
+}
+
+.close-btn:hover {
+  color: #38bdf8;
+}

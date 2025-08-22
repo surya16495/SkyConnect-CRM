@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Engagement • SkyConnect CRM</title>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/engagement.css" />
+    <link rel="stylesheet" href="../styles/passenger.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="brand">
+        <span class="logo">✈️</span>
+        <span class="brand-name">SkyConnect CRM</span>
+      </div>
+      <ul class="nav-links">
+        <li><button class="nav-btn" data-section="home">Home</button></li>
+        <li>
+          <button class="nav-btn" data-section="passengers">
+            Passenger Management
+          </button>
+        </li>
+        <li><button class="nav-btn" data-section="sales">Sales</button></li>
+        <li>
+          <button class="nav-btn active" data-section="engagement">
+            Customer Engagement
+          </button>
+        </li>
+        <li>
+          <button class="nav-btn" data-section="analytics">
+            Analytics & Reporting
+          </button>
+        </li>
+        <li><button id="logoutBtn">Logout</button></li>
+      </ul>
+    </nav>
+
+    <main class="engagement-section">
+      <h2>Customer Engagement</h2>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-value" id="totalNotifications">0</div>
+          <div class="stat-label">Notifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="totalFeedbacks">0</div>
+          <div class="stat-label">Total Feedback</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="activeSurveys">0</div>
+          <div class="stat-label">Active Surveys</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="dailyInteractions">0</div>
+          <div class="stat-label">New Interactions</div>
+        </div>
+      </div>
+
+      <!-- Subnav -->
+      <div class="subnav">
+        <button class="subnav-btn active" data-section="Notifications">
+          Notifications
+        </button>
+        <button class="subnav-btn" data-section="Feedback">Feedback</button>
+        <button class="subnav-btn" data-section="Surveys">Surveys</button>
+        <button class="subnav-btn" data-section="New Interactions">
+          New Interactions
+        </button>
+      </div>
+
+      <!-- Search -->
+      <input
+        type="text"
+        class="search-bar"
+        placeholder="Search..."
+        id="searchInput"
+      />
+
+      <!-- Dynamic content -->
+      <div id="subContent" class="sub-content">
+        <p>Select a section to view details.</p>
+      </div>
+    </main>
+
+    <!-- Feedback Modal -->
+    <div class="modal-overlay" id="feedbackModal">
+      <div class="modal">
+        <h3>Add Feedback</h3>
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label for="fbName">Name (optional)</label>
+            <input type="text" id="fbName" placeholder="Anonymous" />
+          </div>
+          <div class="form-group">
+            <label for="fbComment">Feedback</label>
+            <textarea id="fbComment" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fbRating">Rating</label>
+            <select id="fbRating" required>
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Good</option>
+              <option value="3">3 - Average</option>
+              <option value="2">2 - Poor</option>
+              <option value="1">1 - Bad</option>
+            </select>
+          </div>
+          <div class="modal-buttons">
+            <button type="button" class="modal-btn cancel" id="cancelFeedback">
+              Cancel
+            </button>
+            <button type="submit" class="modal-btn save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Survey Modal -->
+    <div class="modal-overlay" id="surveyModal">
+      <div class="modal">
+        <h3 id="surveyModalTitle">Create Survey</h3>
+        <form id="surveyForm">
+          <div class="form-group">
+            <label for="svTitle">Survey Title</label>
+            <input type="text" id="svTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="svType">Type</label>
+            <select id="svType" required>
+              <option value="Form">Form</option>
+              <option value="Poll">Poll</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="svQuestions">Questions (one per line)</label>
+            <textarea id="svQuestions" rows="5" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="svStart">Start Date</label>
+              <input type="date" id="svStart" />
+            </div>
+            <div class="form-group">
+              <label for="svEnd">End Date</label>
+              <input type="date" id="svEnd" />
+            </div>
+          </div>
+          <div class="modal-buttons">
+            <button type="button" class="modal-btn cancel" id="cancelSurvey">
+              Cancel
+            </button>
+            <button type="submit" class="modal-btn save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Interaction Modal -->
+    <div class="modal-overlay" id="interactionModal">
+      <div class="modal">
+        <h3>Add Interaction</h3>
+        <form id="interactionForm">
+          <div class="form-group">
+            <label for="ixUser">User</label>
+            <input
+              type="text"
+              id="ixUser"
+              placeholder="e.g., Emma Johnson"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="ixAction">Action</label>
+            <input
+              type="text"
+              id="ixAction"
+              placeholder="e.g., Submitted feedback, Viewed offer, etc."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="ixDate">Date/Time</label>
+            <input type="datetime-local" id="ixDate" />
+          </div>
+          <div class="modal-buttons">
+            <button
+              type="button"
+              class="modal-btn cancel"
+              id="cancelInteraction"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="modal-btn save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="surveyViewModal">
+      <div class="modal">
+        <h3 id="surveyViewTitle">Survey Details</h3>
+        <div id="surveyQuestionsContainer"></div>
+        <div class="modal-buttons">
+          <button type="button" class="modal-btn cancel" id="closeSurveyView">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../javascript/dashboard.js"></script>
+    <script src="../javascript/engagement.js"></script>
+  </body>
+</html>

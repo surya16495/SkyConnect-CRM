@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Management</title>
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/sales.css">
+  <link rel="stylesheet" href="../styles/passenger.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">
+      <span class="logo">✈️</span>
+      <span class="brand-name">SkyConnect CRM</span>
+    </div>
+    <ul class="nav-links">
+      <li><button class="nav-btn" data-section="home">Home</button></li>
+      <li><button class="nav-btn" data-section="passenger">Passenger Management</button></li>
+      <li><button class="nav-btn active" data-section="sales">Sales</button></li>
+      <li><button class="nav-btn" data-section="engagement">Customer Engagement</button></li>
+      <li><button class="nav-btn" data-section="analytics">Analytics & Reporting</button></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <!-- Sales Management Section -->
+  <main class="sales-section">
+    <h2>Sales Management</h2>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-value" id="totalLeads">0</div>
+        <div class="stat-label">Total Leads</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="activeCampaigns">0</div>
+        <div class="stat-label">Active Campaigns</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="activeOffers">0</div>
+        <div class="stat-label">Active Offers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="ackCount">0</div>
+        <div class="stat-label">Offer Acknowledgements</div>
+      </div>
+    </div>
+
+    <!-- Subnav -->
+    <div class="subnav">
+      <button class="subnav-btn active" data-section="leads">Leads</button>
+      <button class="subnav-btn" data-section="campaigns">Campaigns</button>
+      <button class="subnav-btn" data-section="offers">Offers</button>
+      <button class="subnav-btn" data-section="acknowledgements">Offer Acknowledgement</button>
+    </div>
+
+    <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
+
+    <!-- Dynamic Content -->
+    <div id="subContent" class="sub-content">
+      <p>Select a section to view details.</p>
+    </div>
+  </main>
+
+  <!-- Modal for Adding Campaigns/Offers -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal">
+      <h3 id="formTitle">Add Item</h3>
+      <form id="itemForm">
+        <div class="form-group">
+          <label for="itemName">Name</label>
+          <input type="text" id="itemName" required>
+        </div>
+        <div class="form-group">
+          <label for="itemDesc">Description</label>
+          <textarea id="itemDesc" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="itemPlatform">Platform</label>
+          <select id="itemPlatform" required>
+            <option value="Web">Web</option>
+            <option value="Email">Email</option>
+            <option value="Social Media">Social Media</option>
+          </select>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="modal-btn cancel" id="cancelForm">Cancel</button>
+          <button type="submit" class="modal-btn save">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../javascript/dashboard.js"></script>
+  <script src="../javascript/sales.js"></script>
+</body>
+</html>

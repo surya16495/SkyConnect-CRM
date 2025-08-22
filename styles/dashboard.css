@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #a855f7;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-btn, #logoutBtn {
+  background: #38bdf8;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0f172a;
+}
+#logoutBtn{
+    background: red;
+    color: white;
+}
+.nav-btn:hover, #logoutBtn:hover {
+  background: #0ea5e9;
+}
+.nav-btn.active {
+  background: #a855f7;
+  color: #fff;
+}
+
+#content {
+  padding: 20px;
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* larger min width */
+  gap: 30px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+/* Card */
+.card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  padding: 35px 30px;   /* more padding */
+  border-radius: 18px;
+  color: #f8fafc;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 0.6s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 24px rgba(0,0,0,0.35);
+}
+
+/* Card title */
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #38bdf8; /* Accent blue */
+}
+
+/* Main stat */
+.card p {
+  font-size: 2rem;   /* bigger main number */
+  font-weight: bold;
+  margin: 12px 0;
+  color: #f1f5f9;
+}
+
+/* Secondary info */
+.card small {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+/* Animation for card load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 2rem;   /* adjust size (2rem ~ 32px) */
+  line-height: 1;
+}
+
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.label {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #94a3b8;
+}
+
+.sparkline {
+  margin-top: 10px;
+  height: 40px;
+}
+
+.sparkline svg {
+  display: block;
+}
+
+.sparkline-path {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
