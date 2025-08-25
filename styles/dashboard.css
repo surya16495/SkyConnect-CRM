@@ -62,7 +62,6 @@ body {
   margin-top: 25px;
 }
 
-/* Cards Grid */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* larger min width */
@@ -71,7 +70,6 @@ body {
   padding: 10px;
 }
 
-/* Card */
 .card {
   background: linear-gradient(145deg, #1e293b, #0f172a);
   padding: 35px 30px;   /* more padding */

@@ -74,68 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   localStorage.setItem("dashboardData", JSON.stringify(dashboardData));
 
-  // Function to render sparklines
-  function renderSparklines(data) {
-    const chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { enabled: true },
-      },
-      elements: {
-        point: { radius: 0 },
-        line: { tension: 0.4 },
-      },
-      scales: { x: { display: false }, y: { display: false } },
-    };
-
-    new Chart(document.getElementById("passengerTrend"), {
-      type: "line",
-      data: {
-        labels: data.passengers.monthly.map((_, i) => `M${i + 1}`),
-        datasets: [{ data: data.passengers.monthly, borderColor: "#38bdf8", fill: false }],
-      },
-      options: chartOptions,
-    });
-
-    new Chart(document.getElementById("salesTrend"), {
-      type: "line",
-      data: {
-        labels: data.sales.monthlyRevenue.map((_, i) => `M${i + 1}`),
-        datasets: [{ data: data.sales.monthlyRevenue, borderColor: "#10b981", fill: false }],
-      },
-      options: chartOptions,
-    });
-
-    new Chart(document.getElementById("analyticsTrend"), {
-      type: "line",
-      data: {
-        labels: data.analytics.dailyUsers.map((_, i) => `D${i + 1}`),
-        datasets: [{ data: data.analytics.dailyUsers, borderColor: "#f59e0b", fill: false }],
-      },
-      options: chartOptions,
-    });
-
-    new Chart(document.getElementById("engagementTrend"), {
-      type: "line",
-      data: {
-        labels: data.engagement.responses.map((_, i) => `C${i + 1}`),
-        datasets: [{ data: data.engagement.responses, borderColor: "#ef4444", fill: false }],
-      },
-      options: chartOptions,
-    });
-
-    new Chart(document.getElementById("reportingTrend"), {
-      type: "line",
-      data: {
-        labels: data.reporting.reportsOverTime.map((_, i) => `T${i + 1}`),
-        datasets: [{ data: data.reporting.reportsOverTime, borderColor: "#6366f1", fill: false }],
-      },
-      options: chartOptions,
-    });
-  }
-
   if (
     window.location.pathname.includes("home.html") ||
     window.location.pathname.endsWith("/") ||
@@ -203,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             `;
 
-          // Animate sparklines after DOM is rendered
           setTimeout(() => {
             document.querySelectorAll(".sparkline-path").forEach(path => {
               const length = path.getTotalLength();
