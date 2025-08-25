@@ -270,7 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = document.getElementById("fbName").value || "Anonymous";
         const comment = document.getElementById("fbComment").value.trim();
         const rating = parseInt(document.getElementById("fbRating").value, 10);
-
+async function name(params) {
+    
+}
         feedbacks.push({ user, comment, rating });
         saveAll();
 
