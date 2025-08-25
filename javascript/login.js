@@ -1,4 +1,3 @@
-// Initialize dummy users in localStorage if not present
 if (!localStorage.getItem("users")) {
   const defaultUsers = [
     { email: "admin@skyconnect.com", password: "12345" },
@@ -7,17 +6,14 @@ if (!localStorage.getItem("users")) {
   localStorage.setItem("users", JSON.stringify(defaultUsers));
 }
 
-// Helper function to get all users
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
 
-// Helper function to update users
 function updateUsers(users) {
   localStorage.setItem("users", JSON.stringify(users));
 }
 
-// Handle login
 document.getElementById("loginForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -67,7 +63,7 @@ document.getElementById("forgotForm").addEventListener("submit", function(e) {
 
   if (userIndex !== -1) {
     users[userIndex].password = newPassword;
-    updateUsers(users); // update localStorage
+    updateUsers(users); 
     resetMsg.style.color = "lightgreen";
     resetMsg.textContent = "Password successfully updated!";
     setTimeout(() => {

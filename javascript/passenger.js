@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("flightData", JSON.stringify(flightData));
     }
 
-    // Store leads dummy data in localStorage if not present
     if (!localStorage.getItem("leadsData")) {
       const leadsData = [
         { id: "LD-1001", name: "Noah Davis", source: "Web Search", interest: "Business Class", status: "New", assigned: "John M." },
